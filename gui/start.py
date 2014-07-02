@@ -143,12 +143,12 @@ class StartQT4(QtGui.QMainWindow):
 			message.setWindowTitle('Blad')
 			message.exec_()
 			return 0
-		if zliczacz(self.ui.WektorBledu.toPlainText())=="blad":
-			mess = QtGui.QMessageBox(self)
-			mess.setText('Detekcja niemozliwa(podano zbyt wiele bledow)')
-			mess.setWindowTitle('Blad')
-			mess.exec_()
-			return 0
+		#if zliczacz(self.ui.WektorBledu.toPlainText())=="blad":
+		#	mess = QtGui.QMessageBox(self)
+		#	mess.setText('Detekcja niemozliwa(podano zbyt wiele bledow)')
+		#	mess.setWindowTitle('Blad')
+		#	mess.exec_()
+		#	return 0
 		from macierze import defaultMatrix
 		(G,H)=defaultMatrix(str(self.ui.hammingInput.text()))
 		from det_kor import detekcja
@@ -163,8 +163,10 @@ class StartQT4(QtGui.QMainWindow):
 		if licznik==0:
 			self.ui.DetekcjaB.setText("brak bledu")
 		else:
-			fonttemplate = QtCore.QString("<font color='black'>%1</font><font color='#FF9999'><b>%2</b></font><font color='black'>%3</font>")
-			self.ui.DetekcjaB.setText(fonttemplate.arg(kod_blad[0:self.pozycjaBledu],kod_blad[self.pozycjaBledu],kod_blad[self.pozycjaBledu+1:] ))
+			#fonttemplate = QtCore.QString("<font color='black'>%1</font><font color='#FF9999'><b>%2</b></font><font color='black'>%3</font>")			
+			self.ui.DetekcjaB.setText("blad wystapil, aby skorygowac kliknij przycisk 'korekcja'(jesli wiecej niz 1 blad korekcja bedzie bledna")
+			
+			#self.ui.DetekcjaB.setText(fonttemplate.arg(kod_blad[0:self.pozycjaBledu],kod_blad[self.pozycjaBledu],kod_blad[self.pozycjaBledu+1:] ))
 		
 	
 	def korekcjaHam(self):
