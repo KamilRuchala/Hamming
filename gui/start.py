@@ -164,7 +164,7 @@ class StartQT4(QtGui.QMainWindow):
 			self.ui.DetekcjaB.setText("brak bledu")
 		else:
 			#fonttemplate = QtCore.QString("<font color='black'>%1</font><font color='#FF9999'><b>%2</b></font><font color='black'>%3</font>")			
-			self.ui.DetekcjaB.setText("blad wystapil, aby skorygowac kliknij przycisk 'korekcja'(jesli wiecej niz 1 blad korekcja bedzie bledna")
+			self.ui.DetekcjaB.setText("blad wystapil,jesli chcesz skorygowac kliknij przycisk 'korekcja'")
 			
 			#self.ui.DetekcjaB.setText(fonttemplate.arg(kod_blad[0:self.pozycjaBledu],kod_blad[self.pozycjaBledu],kod_blad[self.pozycjaBledu+1:] ))
 		
